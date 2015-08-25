@@ -1,3 +1,56 @@
+var currentIndex = 1;
+var timerSwitch = setInterval(function(){ switchJumbotronAuto() }, 6000);
+
+function switchJumbotronAuto(){
+	if(currentIndex == 1) switchJumbotron(2);
+	else if(currentIndex == 2) switchJumbotron(1);
+}
+
+function switchJumbotron(index){
+	if(index == 1){
+		if(currentIndex == 1) return;
+		$(".jumbotron").animate({opacity: 0}, 300, function(){
+
+			$(".jumbotron").css("background-image", "url(img/jumbotron1.jpg)");
+			$("#jumbotron-header").html("TopPlay");
+			$("#caption").html("Introducing the future of outdoor play for children");
+			$("#switcher1").css("background-color", "white");
+			$("#switcher2").css("background-color", "transparent");
+			$(".jumbotron").delay("100").animate({opacity: 1}, 300);
+		});
+		currentIndex = 1;
+	}
+	else if(index == 2){
+		if(currentIndex == 2) return;
+		$(".jumbotron").animate({opacity: 0}, 300, function(){
+
+			$(".jumbotron").css("background-image", "url(img/jumbotron2.jpg)");
+			$("#jumbotron-header").html("SecurePlay");
+			$("#caption").html("The unique and innovative security system");
+			$("#switcher1").css("background-color", "transparent");
+			$("#switcher2").css("background-color", "white");
+			$(".jumbotron").delay("100").animate({opacity: 1}, 300);
+		});
+		currentIndex = 2;
+	}
+}
+
+
+//query loader
+window.addEventListener('DOMContentLoaded', function() {
+  new QueryLoader2(document.querySelector("body"), {
+    barColor: "lightblue",
+    backgroundColor: "white",
+    percentage: true,
+    barHeight: 3,
+    minimumTime: 200,
+    maxTime: 10000,
+    fadeOutTime: 1000
+  });
+});
+
+
+
 //smooth scroll
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -16,6 +69,18 @@ $(function() {
 
 $(document).ready(function()
 {    
+	$("#switcher1").click(function() {
+		clearInterval(timerSwitch);
+		timerSwitch = setInterval(function(){ switchJumbotronAuto() }, 6000);
+		switchJumbotron(1);
+	});
+	$("#switcher2").click(function() {
+		clearInterval(timerSwitch);
+		timerSwitch = setInterval(function(){ switchJumbotronAuto() }, 6000);
+
+		switchJumbotron(2);
+	});
+
 	//mobile jumbotron height
 	if($(document).width() < 979)
 	{

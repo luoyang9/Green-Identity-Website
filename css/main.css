@@ -98,7 +98,8 @@ p {
 
 
 .jumbotron {
-	background: #000 url(../img/jumbotron.jpg) no-repeat center center fixed;
+	position:relative;
+	background: #000 url(../img/jumbotron1.jpg) no-repeat center center fixed;
 	background-size: cover;
     background-repeat: no-repeat;
     height:100%;
@@ -110,6 +111,7 @@ p {
 }
 
 .jumbotron .container {
+	width: 100%;
 	text-align: center;
     color: white;
     display: table-cell;
@@ -162,4 +164,28 @@ p {
 	color:lightgray;
 	padding:20px;
 	background-color:#2e2e2e;
+}
+
+#switcher {
+    position: absolute;
+	left: 0;
+	right: 0;
+    bottom: 5px;
+	margin:0 auto;
+	padding:0;
+}
+
+#switcher1{
+	background-color: white;
+}
+
+.selector {
+	display: inline-block;
+	cursor: pointer;
+	cursor: hand; 
+	margin:0 5px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid white;
+	border-radius: 5px;
 }

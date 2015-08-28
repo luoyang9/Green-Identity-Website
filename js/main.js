@@ -49,6 +49,30 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function submitEmail(){
+	var email = $("#newsletter-email").val();
+	if(email == "")
+	{
+		$("#feedback").html("Please enter an email.");
+		$("#feedback").css("visibility", "visible");
+		return;
+	}
+	if(email.match(/^\S+@\S+\.\S+$/))
+	{
+		$("#feedback").html("Thanks for signing up!");
+		$("#feedback").css("color", "green");
+		$("#feedback").css("visibility", "visible");
+		return;
+	}
+	else
+	{
+		$("#feedback").html("Please enter a valid email.");
+		$("#feedback").css("visibility", "visible");
+		return;
+	}
+}
+
+
 
 
 //smooth scroll
@@ -69,6 +93,10 @@ $(function() {
 
 $(document).ready(function()
 {    
+	$("#about-pic").css("height", $("#about-descrip").height() + "px");
+	$("#about-descrip").css("height", $("#about-pic").height() + "px");
+
+
 	$("#switcher1").click(function() {
 		clearInterval(timerSwitch);
 		timerSwitch = setInterval(function(){ switchJumbotronAuto() }, 6000);
@@ -110,21 +138,19 @@ $(document).ready(function()
 				{
 					TweenLite.to(".navbar", 0.5, {backgroundColor:"rgba(256, 256, 256, 0.9)"});
 
-					$(".navbar-default .navbar-nav > li > a").css('color', '#525252');
+					$(".navbar-default .navbar-nav > li > a").css('color', '#007E57');
 
 					$(".navbar-default .navbar-nav > li > a").mouseover(function() {
-					  $(this).css("color","black")
+					  $(this).css("color","#78AC00")
 					}).mouseout(function(){
-					  $(this).css("color", "#525252");
+					  $(this).css("color", "#007E57");
 					});
 
 					$(".navbar-default .navbar-nav > li > a").focus(function(){
-					  $(this).css("color", "black");
+					  $(this).css("color", "#78AC00");
 					}).blur(function(){
-					  $(this).css("color", "#525252");
+					  $(this).css("color", "#007E57");
 					});
-
-					$(".navbar .navbar-brand").css("color", "black");
 				} 
 				else 
 				{
@@ -142,14 +168,6 @@ $(document).ready(function()
 					  $(this).css("color", "#333");
 					}).blur(function(){
 					  $(this).css("color", "#333");
-					});
-
-					$(".navbar .navbar-brand").css("color", "white");
-
-					$(".navbar .navbar-brand").mouseover(function() {
-					  $(this).css("color","#333")
-					}).mouseout(function(){
-					  $(this).css("color", "white");
 					});
 				}
 			});

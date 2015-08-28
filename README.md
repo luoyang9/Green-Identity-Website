@@ -5,4 +5,4 @@ A website for the winning team from SHAD Waterloo 2015, Green Identity.
 
 Uses Bootstrap and jQuery
 
-#####Temp URL: http://www.charliezhang.xyz/topplay
+#####URL: http://www.greenidentity.ca

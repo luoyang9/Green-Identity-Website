@@ -5,6 +5,6 @@ A website for the winning team from SHAD Waterloo 2015, Green Identity.
 
 Uses Bootstrap and jQuery
 
-#####URL: 
-Live (until Feb 2016): http://www.greenidentity.ca
-Demo: http://www.charliezhang.xyz/greenidentity
+##Live (until Feb 2016): http://www.greenidentity.ca
+
+##Demo: http://www.charliezhang.xyz/greenidentity
